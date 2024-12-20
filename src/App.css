@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Roboto:wght@400;500&display=swap');
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin-bottom: 60px; /* Berikan ruang agar footer tidak bertabrakan */
+}
+* {
+  font-family: 'Poppins', sans-serif; 
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+.logo {
+  width: 50px;
+  height: auto;
+  margin-right: 10px;
+  fill: #333;
+}
+.navbar-brand h1 {
+  font-size: 24px;
+  margin: 0;
+  font-weight: 600;
+  color: #333;
+  font-family: 'Merriweather', serif; 
+}
+.navbar-links {
+  display: flex;
+  gap: 20px;
+}
+.navbar-links a {
+  color: #333;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 5px 10px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+.navbar-links a:hover {
+  color: #666;
+  transform: scale(1.1); 
+}
+.about-title, .explore-title {
+  font-size: 36px;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 40px;
+  color: #000;
+  font-family: 'Roboto', sans-serif; 
+}
+.image-wrapper {
+  text-align: center;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.about-image {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+.about-image:hover {
+  transform: translateY(-10px); 
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2); 
+}
+.image-description {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #333;
+  font-weight: 500;
+  max-width: 250px;
+  text-align: center;
+  padding: 0 10px;
+}
+.image-wrapper {
+  text-align: center;
+  margin: 350px 0; /* Tambahkan margin atas dan bawah */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.image-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 10px; /* Mengurangi jarak dari SearchFooter */
+  margin-bottom: 0; /* Pastikan tidak ada margin bawah */
+}

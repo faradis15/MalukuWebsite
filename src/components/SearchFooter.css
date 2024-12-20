@@ -1,0 +1,73 @@
+.search-footer {
+    padding: 20px; /* Padding di dalam footer */
+    text-align: center; /* Pusatkan teks */
+    margin-bottom: 10px; /* Mengurangi jarak dari elemen di bawahnya */
+    margin-top: 150px; /* Mengatur margin agar elemen turun sekitar 150px */
+    display: flex; /* Menggunakan flexbox untuk tata letak */
+    align-items: center; /* Pusatkan item secara vertikal */
+    justify-content: center; /* Pusatkan item secara horizontal */
+}
+.search-icon {
+    font-size: 28px; /* Perbesar ukuran ikon */
+    margin-right: 10px; /* Jarak antara ikon dan input */
+    color: #007bff; /* Warna ikon */
+}
+.search-input {
+    width: 350px; /* Lebar input lebih besar */
+    padding: 12px; /* Padding di dalam input */
+    font-size: 16px; /* Perbesar ukuran teks input */
+    border: 1px solid #ccc; /* Border input */
+    border-radius: 5px; /* Sudut melengkung */
+}
+.search-button {
+    padding: 12px 24px; /* Perbesar padding tombol */
+    margin-left: 10px; /* Jarak antara input dan tombol */
+    margin-top: 5px; /* Tambahkan jarak agar tombol turun sedikit */
+    font-size: 16px; /* Perbesar ukuran teks tombol */
+    border: none; /* Tanpa border */
+    background-color: #007bff; /* Warna latar belakang tombol */
+    color: white; /* Warna teks tombol */
+    border-radius: 5px; /* Sudut melengkung */
+    cursor: pointer; /* Kursor tangan saat hover */
+    transition: background-color 0.3s ease; /* Efek transisi halus saat hover */
+}
+.search-button:hover {
+    background-color: #0056b3; /* Warna saat hover */
+}
+.search-container {
+    position: relative; /* Membuat posisi relatif untuk daftar saran */
+}
+.suggestions-list {
+    position: absolute;
+    top: 50px; /* Posisi di bawah input */
+    left: 0;
+    width: 100%;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    z-index: 10;
+}
+.suggestion-item {
+    padding: 10px;
+    cursor: pointer;
+    font-size: 16px;
+}
+.suggestion-item:hover {
+    background-color: #f1f1f1;
+}
+.not-found-message {
+    color: red;
+    font-size: 12px;
+    text-align: center;
+    margin-top: 5px;
+    padding: 5px 10px;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    border-radius: 4px;
+}
+.search-container {
+    position: relative; /* Agar elemen di dalamnya dapat diatur posisinya */
+}

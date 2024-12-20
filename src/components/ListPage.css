@@ -1,0 +1,59 @@
+.navbar-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+.navbar-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    transition: background-color 0.3s;
+}
+.navbar-button:hover {
+    background-color: #0056b3;
+}
+.delete-button {
+    background-color: red;
+}
+.delete-button:hover {
+    background-color: darkred;
+}
+.list-page {
+    margin-top: 80px; /* Menurunkan posisi kontainer rincian untuk menghindari navbar */
+    padding: 20px; /* Tambahkan padding di dalam kontainer */
+}
+.saved-list-item {
+    position: relative;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    background-color: white;
+}
+.saved-list-item.selected {
+    border-color: blue;
+    background-color: #e8f4ff;
+}
+.select-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+.empty-message {
+    margin-top: 150px; /* Menurunkan posisi pesan kosong */
+    font-size: 18px; /* Ukuran teks pesan */
+    color: #555; /* Warna teks pesan */
+    font-family: 'Roboto', sans-serif;
+    text-align: center; /* Pesan tetap di tengah secara horizontal */
+}
+.select-icon i {
+    font-size: 20px;
+}
+
+.selected {
+    background-color: #f0f8ff; /* Highlight color when selected */
+}

@@ -1,0 +1,19 @@
+.details-section {
+    padding: 20px;
+    margin: 20px;
+    padding-bottom: 100px; /* Ruang tambahan di bawah konten */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    box-sizing: border-box;
+}
+.detail-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.detail-item:last-child {
+    border-bottom: none;
+}
