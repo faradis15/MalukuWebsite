@@ -1,18 +1,18 @@
 .footer {
-    background-color: #2a3b4d;
+    background-color: #4d545a;
     padding: 10px;
     text-align: center;
     position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
-    z-index: 1000; /* Memastikan footer tetap di atas */
+    z-index: 1000; 
     color: white;
     font-size: 14px;
 }
 .footer-description {
     margin: 0;
-    font-size: 13px;
+    font-size: 12px;
     color: #ffffff;
     margin-bottom: 10px;
     font-family: Arial, sans-serif;
@@ -22,14 +22,14 @@
 .footer-description::after {
     content: '';
     display: block;
-    width: 50%;
+    width: 25%;
     height: 0.5px;
     background-color: rgb(204, 198, 198);
     margin: 5px auto;
     filter: blur(1px);
 }
 .social-icons {
-    margin-top: 10px; /* Mengurangi margin atas untuk lebih seimbang */
+    margin-top: 10px; 
 }
 .social-icon {
     font-size: 35px;

@@ -5,7 +5,7 @@ const Footer = () => {
     return (
         <footer className="footer" id="footer">
             <p className="footer-description">
-                "Provinsi Maluku terdiri dari lebih seribu pulau, dengan pulau besar seperti Seram, Ambon, dan Buru. Wilayah ini memiliki pegunungan, hutan tropis, pantai indah, dan keanekaragaman hayati."
+                "Maluku Travel Mate, dengan hutan tropis dan pantai yang eksotis."
             </p>
             <div className="social-icons">
                 <a href="https://www.instagram.com/reel/DCeRBZ4P3CM/?igsh=ZXI3a3pxaHVxNXRw" target="_blank" rel="noopener noreferrer">

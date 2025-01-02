@@ -8,7 +8,7 @@ const ExploreSection = ({ destination, onExplore, onAddList }) => {
     const [totalCost, setTotalCost] = useState(0);
     const [notFound, setNotFound] = useState(false);
     const [suggestions, setSuggestions] = useState([]);
-    const exploreRef = useRef(null); // Ref untuk mendeteksi klik di luar elemen
+    const exploreRef = useRef(null);
 
     const options = ["Surabaya", "Jakarta", "Yogyakarta"];
 
@@ -20,11 +20,11 @@ const ExploreSection = ({ destination, onExplore, onAddList }) => {
     const getFlightDetails = (location) => {
         switch (location.toLowerCase()) {
             case 'yogyakarta':
-                return { label: 'Yogyakarta (YIA)', cost: 'Rp. 2.765.999' };
+                return { label: 'Lion Air Yogyakarta (YIA)', cost: 'Rp. 2.750.600' };
             case 'surabaya':
-                return { label: 'Surabaya (SUB)', cost: 'Rp. 2.017.900' };
+                return { label: 'Lion Air Surabaya (SUB)', cost: 'Rp. 1.918.000' };
             default:
-                return { label: 'Jakarta (CGK)', cost: 'Rp. 1.832.700' };
+                return { label: 'Super Air Jet Jakarta (CGK)', cost: 'Rp. 1.832.700' };
         }
     };
 
@@ -50,9 +50,9 @@ const ExploreSection = ({ destination, onExplore, onAddList }) => {
             if (destination.toLowerCase() === 'pantai ora') {
                 costDetails = [
                     ...costDetails,
-                    { label: 'Transportasi Darat di Ambon (dari Bandara ke Pelabuhan Tulehu)', cost: 'Rp. 250.000' },
+                    { label: 'Transportasi Darat di Ambon (Taxi dari Bandara ke Pelabuhan Tulehu)', cost: 'Rp. 250.000' },
                     { label: 'Tiket Kapal Laut', cost: 'Rp. 150.000' },
-                    { label: 'Transportasi Darat (dari pelabuhan ke Desa Saleman)', cost: 'Rp. 300.000' },
+                    { label: 'Transportasi Darat (Taxi dari pelabuhan ke Desa Saleman)', cost: 'Rp. 300.000' },
                     { label: 'Penyebrangan Desa Saleman ke Ora Resort', cost: 'Rp. 25.000' },
                 ];
             } else if (destination.toLowerCase() === 'kei island') {
@@ -60,21 +60,21 @@ const ExploreSection = ({ destination, onExplore, onAddList }) => {
                     ...costDetails,
                     { label: 'Transportasi Darat (dari Bandara ke Pelabuhan Yosuedarso)', cost: 'Rp. 250.000' },
                     { label: 'Tiket Kapal Pelni Ambon (AMQ) - Langgur (LUV)', cost: 'Rp. 325.500' },
-                    { label: 'Transportasi Darat (dari Pelabuhan ke Penginapan)', cost: 'Rp. 25.000' },
+                    { label: 'Transportasi Darat (Taxi dari Pelabuhan ke Penginapan)', cost: 'Rp. 50.000' },
                 ];
             } else if (destination.toLowerCase() === 'gunung binaiya') {
                 costDetails = [
                     ...costDetails,
-                    { label: 'Transportasi Darat (dari Bandara ke Pelabuhan Tulehu)', cost: 'Rp. 250.000' },
+                    { label: 'Transportasi Darat (Taxi dari Bandara ke Pelabuhan Tulehu)', cost: 'Rp. 250.000' },
                     { label: 'Tiket Kapal Laut (Tulehu - Masohi)', cost: 'Rp. 150.000' },
-                    { label: 'Transportasi Darat (dari Pelabuhan Masohi ke Desa Tehoru)', cost: 'Rp. 250.000' },
+                    { label: 'Transportasi Darat (Taxi dari Pelabuhan Masohi ke Desa Tehoru)', cost: 'Rp. 250.000' },
                 ];
             } else {
                 costDetails = [
                     ...costDetails,
-                    { label: 'Transportasi Darat (dari Bandara ke Pelabuhan Tulehu)', cost: 'Rp. 250.000' },
+                    { label: 'Transportasi Darat (Taxi dari Bandara ke Pelabuhan Tulehu)', cost: 'Rp. 250.000' },
                     { label: 'Tiket Kapal Laut', cost: 'Rp. 500.000' },
-                    { label: 'Transportasi Darat (dari pelabuhan ke penginapan)', cost: 'Rp. 10.000' },
+                    { label: 'Transportasi Darat (Motor dari pelabuhan ke penginapan)', cost: 'Rp. 10.000' },
                 ];
             }
 
@@ -88,31 +88,41 @@ const ExploreSection = ({ destination, onExplore, onAddList }) => {
         }, 3000);
     };
 
-    const handleAddList = () => {
-        if (details) {
-            onAddList(details);
-            setDetails(null);
-        }
-    };
+    const handleAddList = (() => {
+        let isAdding = false;
+    
+        return () => {
+            if (isAdding) return;
+            isAdding = true;
+    
+            if (!details || details.length === 0) return;
+    
+            onAddList(details); // Kirim rincian ke komponen induk (App.js)
+            setDetails(null); // Reset setelah penambahan
+            setTotalCost(0);
+    
+            setTimeout(() => {
+                isAdding = false;
+            }, 500); // Debouncing untuk mencegah klik berulang
+        };
+    })();
 
     const handleInputFocus = () => {
-        setSuggestions(options); // Tampilkan opsi saat input difokuskan
+        setSuggestions(options);
     };
 
     const handleOptionClick = (option) => {
-        setLocation(option); // Pilih opsi dan masukkan ke input
-        setSuggestions([]); // Sembunyikan daftar opsi
+        setLocation(option);
+        setSuggestions([]);
     };
 
     const handleInputChange = (e) => {
         const value = e.target.value;
         setLocation(value);
 
-        // Jika input kosong, tampilkan semua opsi
         if (value === '') {
             setSuggestions(options);
         } else {
-            // Jika input tidak kosong, sembunyikan opsi jika cocok
             const isOptionMatched = options.some(option => option.toLowerCase() === value.toLowerCase());
             if (isOptionMatched) {
                 setSuggestions([]);
@@ -126,7 +136,7 @@ const ExploreSection = ({ destination, onExplore, onAddList }) => {
 
     const handleClickOutside = (event) => {
         if (exploreRef.current && !exploreRef.current.contains(event.target)) {
-            setSuggestions([]); // Sembunyikan opsi jika klik di luar elemen
+            setSuggestions([]);
         }
     };
 
@@ -136,6 +146,12 @@ const ExploreSection = ({ destination, onExplore, onAddList }) => {
             document.removeEventListener('mousedown', handleClickOutside);
         };
     }, []);
+
+    useEffect(() => {
+        setDetails(null);
+        setTotalCost(0);
+        setNotFound(false);
+    }, [destination]);
 
     return (
         <div className="explore-section" ref={exploreRef}>
@@ -149,6 +165,7 @@ const ExploreSection = ({ destination, onExplore, onAddList }) => {
                     <img
                         src={`${process.env.PUBLIC_URL}/images/${destination.replace(/ /g, '_')}.png`}
                         alt={destination}
+                        className="max-w-full h-auto"
                     />
                     <div className="location-container">
                         <input

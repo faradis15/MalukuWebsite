@@ -3,7 +3,12 @@
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  margin-bottom: 60px; /* Berikan ruang agar footer tidak bertabrakan */
+  margin-bottom: 60px;
+  overflow: hidden;
+}
+.home-page {
+  min-height: 100vh;
+  overflow: hidden;
 }
 * {
   font-family: 'Poppins', sans-serif; 
@@ -16,7 +21,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  background-color: #fff;
+  background-color: #ffffff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 .navbar-brand {
@@ -33,7 +38,7 @@
   font-size: 24px;
   margin: 0;
   font-weight: 600;
-  color: #333;
+  color: #303030;
   font-family: 'Merriweather', serif; 
 }
 .navbar-links {
@@ -62,7 +67,7 @@
 }
 .image-wrapper {
   text-align: center;
-  margin: 0;
+  margin: 350px 0; 
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -88,17 +93,11 @@
   text-align: center;
   padding: 0 10px;
 }
-.image-wrapper {
-  text-align: center;
-  margin: 350px 0; /* Tambahkan margin atas dan bawah */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+
 .image-container {
   display: flex;
   justify-content: center;
   gap: 30px;
-  margin-top: 10px; /* Mengurangi jarak dari SearchFooter */
-  margin-bottom: 0; /* Pastikan tidak ada margin bawah */
+  margin-top: 10px; 
+  margin-bottom: 0; 
 }

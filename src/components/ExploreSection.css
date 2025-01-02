@@ -1,86 +1,101 @@
 .explore-section {
-    margin: 10px auto; /* Kurangi margin vertikal agar lebih ke atas */
-    padding: 30px; /* Padding tetap */
-    border: 1px solid #ccc; /* Border untuk blok */
-    border-radius: 8px; /* Sudut melengkung */
-    background-color: #f9f9f9; /* Warna latar belakang */
-    text-align: center; /* Rata tengah untuk teks */
-    width: 90%; /* Atur lebar blok menjadi 90% dari kontainer */
-    max-width: 800px; /* Atur lebar maksimum untuk tampilan yang lebih besar */
-    position: relative; /* Tambahkan properti position */
-    top: -10px; /* Geser blok ke atas lebih jauh */
+    margin: 10px auto; 
+    padding: 30px; 
+    border: 1px solid #ccc; 
+    border-radius: 8px; 
+    background-color: #f9f9f9; 
+    text-align: center; 
+    width: 90%; 
+    max-width: 800px; 
+    position: relative; 
+    top: -10px; 
 }
+
 .explore-section img {
-    max-width: 100%; /* Gambar tidak melebihi lebar kontainer */
-    height: auto; /* Tinggi otomatis untuk menjaga rasio aspek */
-    border-radius: 8px; /* Sudut melengkung untuk gambar */
-    margin: 10px 0; /* Jarak atas dan bawah untuk gambar */
+    max-width: 100%; 
+    height: auto; 
+    border-radius: 8px; /* Menambahkan border-radius untuk gambar */
+    margin: 10px auto; 
+    display: block; 
+    transition: opacity 0.5s ease; /* Menambahkan efek transisi saat berganti gambar */
 }
+
 .location-input {
-    width: 100%; /* Atur lebar input menjadi 100% dari kontainer */
-    max-width: 300px; /* Atur lebar maksimum untuk input */
-    padding: 10px; /* Padding di dalam input */
-    border: 1px solid #ccc; /* Border input */
-    border-radius: 5px; /* Sudut melengkung */
-    margin: 15px 0; /* Jarak atas dan bawah untuk input */
+    width: 100%; 
+    max-width: 300px; 
+    padding: 10px; 
+    border: 1px solid #ccc; 
+    border-radius: 5px;
+    margin: 15px 0;
 }
+
 .explore-button {
-    padding: 10px 20px; /* Padding untuk tombol */
-    border: none; /* Tanpa border */
-    background-color: #007bff; /* Warna latar belakang tombol */
-    color: white; /* Warna teks tombol */
-    border-radius: 5px; /* Sudut melengkung */
-    cursor: pointer; /* Kursor tangan saat hover */
-    transition: background-color 0.3s ease; /* Efek transisi halus saat hover */
-    margin-left: 10px; /* Geser tombol ke kanan */
+    padding: 10px 20px; 
+    border: none; 
+    background-color: #007bff; 
+    color: white; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease; 
+    margin-left: 10px; 
 }
+
 .explore-button:hover {
-    background-color: #0056b3; /* Warna saat hover */
+    background-color: #0056b3; 
 }
+
 .add-list-button {
-    margin-top: 10px; /* Jarak atas */
-    margin-left: 10px; /* Geser tombol Add List ke kanan */
+    margin-top: 10px; 
+    margin-left: 10px; 
     padding: 8px 16px;
-    background-color: #28a745; /* Warna hijau */
+    background-color: #28a745; 
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
+
 .add-list-button:hover {
-    background-color: #218838; /* Warna hijau lebih gelap saat hover */
+    background-color: #218838; 
 }
+
 .details-section {
-    margin-top: 20px; /* Jarak atas untuk rincian biaya */
-    margin-bottom: 20px; /* Tambahkan margin bawah untuk memberi ruang */
-    text-align: left; /* Rata kiri untuk teks rincian */
+    margin-top: 20px; 
+    margin-bottom: 20px; 
+    text-align: left; 
 }
+
 .detail-item {
-    display: flex; /* Menggunakan flexbox untuk tata letak */
-    justify-content: space-between; /* Jarak antara label dan biaya */
-    padding: 5px 0; /* Padding atas dan bawah untuk setiap item */
+    display: flex; 
+    justify-content: space-between; 
+    padding: 5px 0; 
 }
+
 .detail-label {
-    font-weight: bold; /* Tebalkan label */
+    font-weight: bold; 
 }
+
 .detail-cost {
-    color: #007bff; /* Warna untuk biaya */
+    color: #007bff; 
 }
+
 .total-cost {
     text-align: right;
     margin-top: 10px;
     font-weight: bold;
     color: #007bff;
 }
+
 .location-container {
-    position: relative; /* Memastikan daftar saran berada di dalam konteks kontainer input */
+    position: relative; 
 }
+
 .suggestions-list {
     position: absolute;
-    top: 100%; /* Tempatkan tepat di bawah input */
+    top: 100%; 
     left: 0;
-    width: 100%; /* Lebar sesuai dengan input */
+    width: 100%; 
     background-color: white;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -88,25 +103,12 @@
     padding: 0;
     margin: 0;
     z-index: 10;
-    max-height: 120px; /* Batasi tinggi maksimal */
-    overflow-y: auto; /* Tambahkan scrollbar jika konten melebihi tinggi maksimal */
 }
 .suggestion-item {
-    padding: 8px 10px; /* Kurangi padding untuk membuat item lebih kecil */
+    padding: 8px 10px; 
     cursor: pointer;
-    font-size: 14px; /* Kurangi ukuran font */
+    font-size: 14px; 
 }
 .suggestion-item:hover {
     background-color: #f1f1f1;
-}
-.location-container {
-    position: relative;
-}
-.location-input {
-    width: 100%; /* Atur lebar menjadi 100% dari kontainer lokasi */
-    max-width: 300px; /* Batas maksimum agar input tidak terlalu besar */
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin: 15px 0;
 }

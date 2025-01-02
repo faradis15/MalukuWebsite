@@ -1,122 +1,169 @@
 .navbar {
   display: flex;
-  justify-content: space-between; /* Pastikan elemen di dalam navbar terdistribusi dengan baik */
+  justify-content: space-between; 
   align-items: center;
   padding: 10px 20px;
-  background-color: #fff;
+  background-color: #ffffffa9;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   position: fixed; 
   top: 0;
   width: 100%;
+  height: 60px; /* Tinggi navbar */
   z-index: 1000; 
 }
-.navbar-icon {
-  margin-left: 10px; 
-  font-size: 24px; 
-  cursor: pointer; 
-}
+
 .navbar-brand {
   display: flex;
   align-items: center;
 }
+
 .logo {
   width: 50px;
   height: auto;
   margin-right: 10px;
 }
+
 .navbar-brand h1 {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 600;
-  color: #333;
+  color: #1f1f1f;
   font-family: 'Roboto', sans-serif;
   margin: 0;
 }
+
 .navbar-links {
   display: flex;
   gap: 20px;
 }
+
 .navbar-links a {
-  color: #333;
+  color: #202020;
   text-decoration: none;
   font-size: 16px;
   font-weight: 500;
   padding: 5px 10px;
   transition: color 0.3s ease, transform 0.3s ease;
 }
+
 .navbar-links a:hover {
   color: #007BFF;
   transform: scale(1.1);
 }
-.navbar-toggle {
-  display: none; 
-}
-.home-content {
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 85vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 0 10px;
-}
-.home-description {
-  font-size: 16px;
-  color: #fff;
-  line-height: 1.5;
-  font-weight: bold;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); 
-  padding: 20px;
-  max-width: 90%; 
-}
-.navbar-search {
-    display: flex;
-    align-items: center;
+
+.navbar-icon {
+  margin-left: 10px;
+  font-size: 24px;
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.2s ease;
 }
 
-.search-input {
-    width: 200px; /* Atur lebar input sesuai kebutuhan */
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-right: 10px; /* Jarak antara input dan tombol */
+.navbar-icon:hover {
+  color: #007BFF;
+  transform: scale(1.1);
 }
 
-.search-button {
-    padding: 10px 20px;
-    border: none;
-    background-color: #007bff;
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.search-button:hover {
-    background-color: #0056b3;
-}
 .navbar-left i {
   font-size: 24px;
   cursor: pointer;
   margin-left: 10px;
 }
+
 .navbar-right {
   display: flex;
-  align-items: center; /* Pastikan tombol selaras di tengah navbar */
-}
-.navbar-button {
-    padding: 10px 20px; /* Padding untuk tombol */
-    border: none; /* Tanpa border */
-    background-color: #007bff; /* Warna latar belakang tombol */
-    color: white; /* Warna teks tombol */
-    border-radius: 5px; /* Sudut melengkung */
-    cursor: pointer; /* Kursor tangan saat hover */
-    transition: background-color 0.3s ease; /* Efek transisi halus saat hover */
-}
-.navbar-button:hover {
-    background-color: #0056b3; /* Warna saat hover */
-}
-.navbar-right .navbar-button {
-    margin-left: 10px; /* Tambahkan jarak antara tombol */
+  align-items: center;
 }
 
+.navbar-button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.navbar-button:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+.navbar-right .navbar-button {
+  margin-left: 10px;
+}
+
+.navbar-search {
+  display: flex;
+  align-items: center;
+}
+
+.search-input {
+  width: 200px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.search-button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.search-button:hover {
+  background-color: #0056b3;
+}
+
+/* Responsivitas */
+@media (max-width: 768px) {
+  .navbar {
+    flex-wrap: wrap;
+    padding: 10px 15px;
+  }
+
+  .navbar-brand h1 {
+    font-size: 18px;
+  }
+
+  .navbar-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .navbar-button {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+
+  .search-input {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 5px 10px;
+  }
+
+  .navbar-brand h1 {
+    font-size: 16px;
+  }
+
+  .logo {
+    width: 40px;
+  }
+
+  .navbar-links a {
+    font-size: 14px;
+  }
+
+  .navbar-button {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+}

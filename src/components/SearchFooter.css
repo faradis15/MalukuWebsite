@@ -1,45 +1,45 @@
 .search-footer {
-    padding: 20px; /* Padding di dalam footer */
-    text-align: center; /* Pusatkan teks */
-    margin-bottom: 10px; /* Mengurangi jarak dari elemen di bawahnya */
-    margin-top: 150px; /* Mengatur margin agar elemen turun sekitar 150px */
-    display: flex; /* Menggunakan flexbox untuk tata letak */
-    align-items: center; /* Pusatkan item secara vertikal */
-    justify-content: center; /* Pusatkan item secara horizontal */
+    padding: 20px; 
+    text-align: center; 
+    margin-bottom: 10px; 
+    margin-top: 150px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
 }
 .search-icon {
-    font-size: 28px; /* Perbesar ukuran ikon */
-    margin-right: 10px; /* Jarak antara ikon dan input */
-    color: #007bff; /* Warna ikon */
+    font-size: 28px; 
+    margin-right: 10px; 
+    color: #007bff; 
 }
 .search-input {
-    width: 350px; /* Lebar input lebih besar */
-    padding: 12px; /* Padding di dalam input */
-    font-size: 16px; /* Perbesar ukuran teks input */
-    border: 1px solid #ccc; /* Border input */
-    border-radius: 5px; /* Sudut melengkung */
+    width: 350px; 
+    padding: 12px; 
+    font-size: 16px; 
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
 }
 .search-button {
-    padding: 12px 24px; /* Perbesar padding tombol */
-    margin-left: 10px; /* Jarak antara input dan tombol */
-    margin-top: 5px; /* Tambahkan jarak agar tombol turun sedikit */
-    font-size: 16px; /* Perbesar ukuran teks tombol */
-    border: none; /* Tanpa border */
-    background-color: #007bff; /* Warna latar belakang tombol */
-    color: white; /* Warna teks tombol */
-    border-radius: 5px; /* Sudut melengkung */
-    cursor: pointer; /* Kursor tangan saat hover */
-    transition: background-color 0.3s ease; /* Efek transisi halus saat hover */
+    padding: 12px 24px;
+    margin-left: 10px; 
+    margin-top: 5px; 
+    font-size: 16px; 
+    border: none; 
+    background-color: #007bff; 
+    color: white; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease; 
 }
 .search-button:hover {
-    background-color: #0056b3; /* Warna saat hover */
+    background-color: #0056b3; 
 }
 .search-container {
-    position: relative; /* Membuat posisi relatif untuk daftar saran */
+    position: relative; 
 }
 .suggestions-list {
     position: absolute;
-    top: 50px; /* Posisi di bawah input */
+    top: 50px; 
     left: 0;
     width: 100%;
     background-color: white;
@@ -69,5 +69,5 @@
     border-radius: 4px;
 }
 .search-container {
-    position: relative; /* Agar elemen di dalamnya dapat diatur posisinya */
+    position: relative; 
 }

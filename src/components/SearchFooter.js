@@ -5,7 +5,7 @@ const SearchFooter = ({ onSearch }) => {
     const [destination, setDestination] = useState('');
     const [suggestions, setSuggestions] = useState([]);
     const [notFound, setNotFound] = useState(false); // State untuk "Not Found"
-    const options = ["Banda Neira", "Pantai Ora", "Kei Island", "Gunung Binaiya"]; // Tambahkan "Gunung Binaiya"
+    const options = ["Banda Neira", "Pantai Ora", "Kei Island", "Gunung Binaiya"]; 
     const searchRef = useRef(null);
 
     const handleInputFocus = () => {
@@ -18,12 +18,18 @@ const SearchFooter = ({ onSearch }) => {
         const value = e.target.value;
         setDestination(value);
 
+        // Tampilkan saran berdasarkan input
+        const filteredSuggestions = options.filter(option =>
+            option.toLowerCase().includes(value.toLowerCase())
+        );
+        setSuggestions(filteredSuggestions);
+
         // Sembunyikan opsi jika input cocok dengan salah satu pilihan
         if (options.includes(value)) {
             setSuggestions([]);
             setNotFound(false); // Reset "Not Found" jika destinasi valid
         } else {
-            setSuggestions(options); // Tampilkan kembali opsi jika input dihapus atau tidak cocok
+            setNotFound(false); // Reset "Not Found"
         }
     };
 
@@ -64,7 +70,7 @@ const SearchFooter = ({ onSearch }) => {
                 <input 
                     type="text" 
                     placeholder="Banda Neira, Pantai Ora, ..." 
-                    className="search-input" 
+                    className="search-input w-full md:w-1/2" // Responsif,di perangkat kecil 
                     value={destination}
                     onFocus={handleInputFocus}
                     onChange={handleInputChange}
@@ -85,7 +91,7 @@ const SearchFooter = ({ onSearch }) => {
                     </ul>
                 )}
             </div>
-            <button className="search-button" onClick={handleSearch}>Search</button>
+            <button className="search-button w-full md:w-auto" onClick={handleSearch}>Search</button>
         </div>
     );
 };
