@@ -1,5 +1,5 @@
 import { db } from './firebaseConfig';
-import { collection, addDoc, getDocs, doc, deleteDoc } from 'firebase/firestore';
+import { collection, addDoc, getDocs, doc, deleteDoc, updateDoc } from 'firebase/firestore';
 
 export const addListToFirebase = async (newList) => {
     try {
@@ -35,5 +35,17 @@ export const deleteListFromFirebase = async (docId) => {
         console.log(`Document with ID ${docId} has been deleted.`);
     } catch (error) {
         console.error('Error deleting document: ', error);
+    }
+};
+
+export const updateListInFirebase = async (docId, updatedData) => {
+    try {
+        const docRef = doc(db, 'savedLists', docId);
+        await updateDoc(docRef, updatedData);
+        console.log(`Document with ID ${docId} has been updated.`);
+        return true;
+    } catch (error) {
+        console.error('Error updating document: ', error);
+        return false;
     }
 };
